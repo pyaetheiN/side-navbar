@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+$bgcolor: rgb(245, 245, 245);
+$shadow1: rgba(0, 0, 0, 0.1);
+$shadow2: rgba(0, 0, 0, 0.2);
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  background-color: $bgcolor;
+}
+
+.nav{
+  background-color: $bgcolor;
+  padding: 0.7rem 0.4rem;
+  box-shadow: 1px 1px 10px $shadow1;
+  width: 45px;
+  min-height: 100vh;
+  position: relative;
+  transition: 0.3s;
+  overflow: hidden; // *
+
+  &__toggle{
+    font-size: 1.3em;
+    padding-left: 0.4rem;
+    cursor: pointer;
+  }
+
+  &__menu{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    position: absolute;
+    width: 130px;
+    min-height: 100vh;
+    padding-top: 0.5rem;
+  }
+
+  &__item{
+    padding: 0.2rem 0.5rem;
+    cursor: pointer;
+    border-radius: 0.5rem 0 0 0.5rem;
+
+    &--link{
+      text-decoration: none;
+      color: black;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    &--icon{
+      font-weight: 600;
+
+      &:not(.uil-message){
+        font-size: 1.1em;
+      }
+
+      &.uil-message{
+        padding-left: 0.1rem;
+      }
+    }
+
+    &--text{
+      opacity: 0;
+      transition: 0.2s;
+    }
+  
+    &:hover{
+      width: 30%;
+      background-color: white;
+      box-shadow: 1px 1px 10px $shadow2;
+    }
+  }
+
+  &.expand{
+    width: 142px;
+
+    .nav__item{
+      border-radius: 0.5rem;
+      position: relative;
+
+      &:hover{
+        width: 100%;
+      }
+
+      &--text{
+        opacity: 1;
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  background-color: rgb(245, 245, 245);
+}
+
+.nav {
+  background-color: rgb(245, 245, 245);
+  padding: 0.7rem 0.4rem;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  width: 45px;
+  min-height: 100vh;
+  position: relative;
+  transition: 0.3s;
+  overflow: hidden;
+}
+.nav__toggle {
+  font-size: 1.3em;
+  padding-left: 0.4rem;
+  cursor: pointer;
+}
+.nav__menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  position: absolute;
+  width: 130px;
+  min-height: 100vh;
+  padding-top: 0.5rem;
+}
+.nav__item {
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+.nav__item--link {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.nav__item--icon {
+  font-weight: 600;
+}
+.nav__item--icon:not(.uil-message) {
+  font-size: 1.1em;
+}
+.nav__item--icon.uil-message {
+  padding-left: 0.1rem;
+}
+.nav__item--text {
+  opacity: 0;
+  transition: 0.2s;
+}
+.nav__item:hover {
+  width: 30%;
+  background-color: white;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+}
+.nav.expand {
+  width: 142px;
+}
+.nav.expand .nav__item {
+  border-radius: 0.5rem;
+  position: relative;
+}
+.nav.expand .nav__item:hover {
+  width: 100%;
+}
+.nav.expand .nav__item--text {
+  opacity: 1;
+}/*# sourceMappingURL=style.css.map */
